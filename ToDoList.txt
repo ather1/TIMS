@@ -1,0 +1,10 @@
+To DO list
+Create a folder in  client\app\components\classname
+Create a file in  client\app\components\classname\classname.component.html
+Create a file in  client\app\components\classname\classname.component.js
+
+Create a file which references the service in your api
+\client\app\services\classname.service.ts
+
+This service  file references a poco class 
+\client\classname.js
