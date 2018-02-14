@@ -7,6 +7,7 @@ import {TasksComponent} from './components/tasks/tasks.component';
 import {TenantsComponent} from  './components/tenants/tenants.components';
 
 
+
 @NgModule({
   imports:      [ BrowserModule, HttpModule, FormsModule ],
   declarations: [AppComponent, TasksComponent,TenantsComponent],

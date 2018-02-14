@@ -10,15 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var task_service_1 = require('./services/task.service');
+var tenant_service_1 = require('./services/tenant.service');
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'Hello cheese';
     }
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
             templateUrl: 'app.component.html',
-            providers: [task_service_1.TaskService]
+            providers: [task_service_1.TaskService, tenant_service_1.TenantService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

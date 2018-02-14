@@ -11,44 +11,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/map');
-var TaskService = (function () {
-    function TaskService(http) {
+var TenantService = (function () {
+    function TenantService(http) {
         this.http = http;
-        console.log('Task Service Initialized...');
+        console.log('Tenant Service Initialized...');
     }
-    TaskService.prototype.getTasks = function () {
-        return this.http.get('/api/tasks')
+    TenantService.prototype.getTenants = function () {
+        return this.http.get('/api/tenants')
             .map(function (res) { return res.json(); });
     };
-    TaskService.prototype.addTask = function (newTask) {
+    TenantService.prototype.addTenant = function (newTenant) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/task', JSON.stringify(newTask), { headers: headers })
+        return this.http.post('/api/tenant', JSON.stringify(newTenant), { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    TaskService.prototype.deleteTask = function (id) {
-        return this.http.delete('/api/task/' + id)
+    TenantService.prototype.deleteTenant = function (id) {
+        return this.http.delete('/api/tenant/' + id)
             .map(function (res) { return res.json(); });
     };
-    TaskService.prototype.updateStatus = function (task) {
+    TenantService.prototype.updateStatus = function (tenant) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.put('/api/task/' + task._id, JSON.stringify(task), { headers: headers })
+        return this.http.put('/api/task/' + tenant._id, JSON.stringify(tenant), { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    TaskService = __decorate([
+    TenantService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], TaskService);
-    return TaskService;
+    ], TenantService);
+    return TenantService;
 }());
-exports.TaskService = TaskService;
-var Task1Service = (function () {
-    function Task1Service(http) {
-        this.http = http;
-        console.log('Task 1 Service Initialized...');
-    }
-    return Task1Service;
-}());
-exports.Task1Service = Task1Service;
-//# sourceMappingURL=task.service.js.map
+exports.TenantService = TenantService;
+//# sourceMappingURL=tenant.service.js.map
